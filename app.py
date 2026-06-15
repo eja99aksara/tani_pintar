@@ -27,6 +27,7 @@ with st.container():
         st.button("Konsultasi Gratis (WA)")
         
     st.markdown('</div>', unsafe_allow_html=True)
+    
 # --- FRAME B: Solusi Pertanian ---
 st.markdown('<div class="frame frame-b">', unsafe_allow_html=True)
 st.subheader("Satu sistem pintar untuk semua jenis pertanian.")
