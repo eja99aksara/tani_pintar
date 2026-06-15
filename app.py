@@ -1,32 +1,58 @@
 import streamlit as st
 
-# CSS kustom untuk menghias kontainer
+# =================================================================
+# 1. ATUR CSS KUSTOM (Mewarnai kontainer berdasarkan KEY)
+# =================================================================
 st.markdown("""
     <style>
-    .hero-container {
-        background-color: #2d5a27;
-        padding: 40px;
-        border-radius: 10px;
-        color: white;
+    /* Mencari container Streamlit yang memiliki key="hero" */
+    [data-testid="stElementContainer"]:has(div[id="hero"]) {
+        background-color: #2d5a27 !important;
+        padding: 35px !important;
+        border-radius: 12px !important;
+        color: white !important;
+        margin-bottom: 25px;
+    }
+    
+    /* Memastikan teks judul h1 di dalam container hero berwarna putih */
+    [data-testid="stElementContainer"]:has(div[id="hero"]) h1 {
+        color: white !important;
+        font-size: 2rem !important;
+        font-weight: bold !important;
+    }
+    
+    /* Membuat tombol di dalam hero mengikuti tema */
+    [data-testid="stElementContainer"]:has(div[id="hero"]) button {
+        background-color: #ffffff !important;
+        color: #2d5a27 !important;
+        border: none !important;
+        font-weight: bold !important;
     }
     </style>
 """, unsafe_allow_html=True)
 
-# --- FRAME A: Hero Section ---
-with st.container():
-    # Menghubungkan kelas CSS ke dalam kontainer via HTML pembungkus
-    st.markdown('<div class="hero-container">', unsafe_allow_html=True)
+
+# =================================================================
+# 2. STRUKTUR FRAME A: HERO SECTION (Murni Streamlit)
+# =================================================================
+# Kita buat container murni Streamlit dan beri key="hero"
+with st.container(key="hero"):
+    # Trik jangkar kecil agar CSS di atas bisa mendeteksi kontainer ini
+    st.markdown('<div id="hero"></div>', unsafe_allow_html=True)
     
+    # Membuat 3 kolom di dalam kontainer
     col1, col2, col3 = st.columns([1, 3, 1])
     
     with col1:
-        st.write("Logo")
-    with col2:
-        st.markdown("<h1 style='text-align: center; color: white;'>Ubah Kebun Anda Menjadi Cerdas. Lipat Gandakan Hasil Panen Tanpa Ribet.</h1>", unsafe_allow_html=True)
-    with col3:
-        st.button("Konsultasi Gratis (WA)")
+        st.write("### **Logo**")
         
-    st.markdown('</div>', unsafe_allow_html=True)
+    with col2:
+        # Menggunakan heading standar Streamlit agar lebih stabil
+        st.markdown("<h1 style='text-align: center; margin: 0;'>Ubah Kebun Anda Menjadi Cerdas</h1>", unsafe_allow_html=True)
+        
+    with col3:
+        # Tombol bawaan Streamlit
+        st.button("Konsultasi Gratis (WA)", key="tombol_wa")
     
 # --- FRAME B: Solusi Pertanian ---
 st.markdown('<div class="frame frame-b">', unsafe_allow_html=True)
