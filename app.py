@@ -45,14 +45,12 @@ link_youtube_demo = "https://youtube.com"
 link_toko_online = "https://tokopedia.com" 
 
 # =================================================================
-# --- FRAME A: HERO SECTION (Efek Transparan Glassmorphism & Tombol Mini) ---
+# --- FRAME A: HERO SECTION (Menghapus Kotak Buram, Efek Jernih Maksimal) ---
 # =================================================================
-hero_html = f"""<div style="background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('{bg_hero}'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 30px 15px; border-radius: 12px; color: white; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 15px; margin-bottom: 30px; font-family: sans-serif;">
-<div style="background-color: rgba(255, 255, 255, 0.25); padding: 15px 20px; border-radius: 12px; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); border: 1px solid rgba(255, 255, 255, 0.25); width: 85%;">
-    <div style="font-size: 1.1rem; font-weight: bold; letter-spacing: 1px; margin-bottom: 5px; color: #fff; text-shadow: 1px 1px 3px rgba(0,0,0,0.3);">🌿 TaniPintar</div>
-    <h1 style="color: white; margin: 0 0 12px 0; font-size: 1.5rem; font-weight: 800; line-height: 1.2; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); border: none; background: none; padding: 0;">Ubah Kebun Anda<br>Menjadi Cerdas</h1>
-    <a href="{nomor_admin_wa}" target="_blank" style="background-color: rgba(255, 255, 255, 0.2); color: white; padding: 5px 12px; border-radius: 20px; text-decoration: none; font-weight: bold; font-size: 0.75rem; display: inline-block; backdrop-filter: blur(4px); border: 1px solid rgba(255,255,255,0.4); box-shadow: 0 2px 5px rgba(0,0,0,0.1);">Konsultasi Gratis (WA)</a>
-</div>
+hero_html = f"""<div style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('{bg_hero}'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 40px 20px; border-radius: 12px; color: white; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px; margin-bottom: 30px; font-family: sans-serif;">
+    <div style="font-size: 1.1rem; font-weight: bold; letter-spacing: 1px; margin-bottom: 2px; color: #ffffff; text-shadow: 2px 2px 5px rgba(0,0,0,0.7);">🌿 TaniPintar</div>
+    <h1 style="color: white; margin: 0 0 10px 0; font-size: 1.6rem; font-weight: 800; line-height: 1.2; text-shadow: 2px 2px 6px rgba(0,0,0,0.8); border: none; background: none; padding: 0;">Ubah Kebun Anda<br>Menjadi Cerdas</h1>
+    <a href="{nomor_admin_wa}" target="_blank" style="background-color: #2d5a27; color: white; padding: 6px 16px; border-radius: 20px; text-decoration: none; font-weight: bold; font-size: 0.75rem; display: inline-block; box-shadow: 0 4px 6px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.2);">Konsultasi Gratis (WA)</a>
 </div>"""
 
 st.markdown(hero_html, unsafe_allow_html=True)
@@ -120,19 +118,17 @@ with tab2:
             st.success(f"Terima kasih {nama}! Data berhasil dikirim.")
 
 # =================================================================
-# --- FRAME D: SOCIAL PROOF (Wadah Mengikuti Gaya Transparansi)    ---
+# --- FRAME D: SOCIAL PROOF (Mengikuti Gaya Jernih Tanpa Kotak Buram) ---
 # =================================================================
 st.write("")
 st.markdown("## **Social Proof & Penutup**")
 
-frame_d_html = f"""<div style="background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('{bg_proof}'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 25px 15px; border-radius: 12px; font-family: sans-serif; margin-bottom: 30px; display: flex; justify-content: center;">
-<div style="background-color: rgba(255, 255, 255, 0.25); padding: 15px 18px; border-radius: 12px; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); border: 1px solid rgba(255, 255, 255, 0.25); border-left: 4px solid #ffffff; width: 85%;">
-<p style="font-style: italic; color: #ffffff; font-size: 0.8rem; line-height: 1.5; margin: 0 0 10px 0; text-shadow: 1px 1px 3px rgba(0,0,0,0.4);">
-"Implementasi teknologi IoT dan otomatisasi pada kebun terbukti meningkatkan efisiensi penggunaan pupuk hingga 30% dan mempercepat masa panen secara stabil."
-</p>
-<b style="color: #ffffff; font-size: 0.8rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.4);">Dr. Ir. Hermawan, M.Sc.</b><br>
-<span style="color: #eeeeee; font-size: 0.7rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.4);">Pakar Agronomi & Teknologi Pertanian</span>
-</div>
+frame_d_html = f"""<div style="background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('{bg_proof}'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 40px 25px; border-radius: 12px; font-family: sans-serif; margin-bottom: 30px; text-align: center;">
+    <p style="font-style: italic; color: #ffffff; font-size: 0.85rem; line-height: 1.6; margin: 0 0 15px 0; text-shadow: 2px 2px 5px rgba(0,0,0,0.8); font-weight: 500;">
+    "Implementasi teknologi IoT dan otomatisasi pada kebun terbukti meningkatkan efisiensi penggunaan pupuk hingga 30% dan mempercepat masa panen secara stabil."
+    </p>
+    <b style="color: #ffffff; font-size: 0.85rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Dr. Ir. Hermawan, M.Sc.</b><br>
+    <span style="color: #e0e0e0; font-size: 0.75rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Pakar Agronomi & Teknologi Pertanian</span>
 </div>"""
 
 st.markdown(frame_d_html, unsafe_allow_html=True)
