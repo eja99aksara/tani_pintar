@@ -68,18 +68,20 @@ st.markdown(frame_b_html, unsafe_allow_html=True)
 
 
 # =================================================================
-# --- FRAME C: PRODUK & HARGA (Latar Close-Up IoT Hardware)     ---
+# --- FRAME C: PRODUK & HARGA (Perbaikan Indentasi Kolom Tombol) ---
 # =================================================================
-# Menggunakan gambar komponen hardware elektronik/sensor IoT mikro dengan overlay putih 80% agar tabel tetap bersih
+
+# Trik kontainer abu-abu untuk memisahkan section harga
 st.markdown("""<div style="background-image: linear-gradient(rgba(248,249,250,0.8), rgba(248,249,250,0.8)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop'); background-size: cover; background-position: center; padding: 25px; border-radius: 12px; margin-bottom: 30px; font-family: sans-serif;">
 <h2 style="margin-top: 0; color: #333; font-weight: bold; text-shadow: 1px 1px 2px rgba(255,255,255,0.8);">Pilih Paket Sesuai Kebutuhan Anda</h2>
 <p style="color: #446; margin-bottom: 5px; font-weight: 500;">Mulai digitalisasi kebun Anda hari ini demi hasil panen yang berlipat ganda.</p>
 </div>""", unsafe_allow_html=True)
 
+# Inisialisasi Tab
 tab1, tab2 = st.tabs(["🛒 Beli Langsung", "💬 Tanya Dulu"])
 
 with tab1:
-with tab1:
+    st.markdown("### **Daftar Paket Tani Pintar**")
     tabel_harga = """
 | Nama Paket | Target Pengguna | Fitur Utama |
 | :--- | :--- | :--- |
@@ -90,7 +92,7 @@ with tab1:
     st.markdown(tabel_harga)
     st.write("") 
     
-    # PERBAIKAN: Membagi tombol menjadi 2 kolom yang berdampingan
+    # Membagi tombol menjadi 2 kolom berdampingan dengan indentasi 4 spasi
     kolom_kiri, kolom_kanan = st.columns(2)
     
     with kolom_kiri:
@@ -99,21 +101,26 @@ with tab1:
     with kolom_kanan:
         st.link_button("📺 Lihat Demo Alat (YouTube)", link_youtube_demo, use_container_width=True)
         
-    # Tombol Hubungi Admin tetap penuh di bawahnya sebagai aksi utama
+    # Tombol utama kembali sejajar di bawah blok kolom
     st.link_button("🟢 Hubungi Admin untuk Pemesanan Paket (WA)", nomor_admin_wa, use_container_width=True)
 
 with tab2:
+    st.markdown("### **Formulir Konsultasi Gratis**")
+    st.write("Silakan isi data di bawah ini, tim ahli kami akan segera menghubungi Anda.")
+    
     with st.form(key="form_konsultasi"):
         nama = st.text_input("Nama Lengkap")
         kontak = st.text_input("Nomor WhatsApp / Email")
         luas_lahan = st.selectbox("Luas Lahan Pertanian", ["< 100 m² (Rumahan)", "100 - 1000 m²", "> 1000 m² (Skala Industri)"])
         pesan = st.text_area("Ceritakan kendala atau kebutuhan kebun Anda")
         submit_button = st.form_submit_button(label="Kirim Pengajuan Konsultasi")
+        
         if submit_button:
             if nama and kontak:
                 st.success(f"Terima kasih {nama}! Data berhasil dikirim. Tim kami akan menghubungi Anda di {kontak}.")
             else:
                 st.warning("Mohon isi Nama dan Kontak Anda terlebih dahulu.")
+                
     st.write("")
     st.markdown("<p style='text-align: center; color: #666;'>Atau ingin respon lebih cepat?</p>", unsafe_allow_html=True)
     st.link_button("💬 Chat Admin Langsung via WhatsApp", nomor_admin_wa, use_container_width=True)
