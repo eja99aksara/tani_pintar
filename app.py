@@ -15,10 +15,8 @@ st.markdown("""
 
 
 # =================================================================
-# 2. STRUKTUR FRAME A: HERO SECTION (Murni Flexbox HTML)
-# =================================================================
+# --- FRAME A: HERO SECTION (Murni Flexbox HTML dieksekusi Python) ---
 
-# Semua elemen (Logo, Judul, Tombol) disatukan dalam satu blok HTML murni
 hero_html = """
 <div style="
     background-color: #2d5a27; 
@@ -31,13 +29,14 @@ hero_html = """
     flex-wrap: wrap;
     gap: 20px;
     margin-bottom: 30px;
+    font-family: sans-serif;
 ">
-    <div style="flex: 1; min-width: 100px; font-size: 1.5rem; font-weight: bold;">
-        🥬 TaniPintar
+    <div style="flex: 1; min-width: 100px; font-size: 1.5rem; font-weight: bold; display: flex; align-items: center; gap: 8px;">
+        🌿 TaniPintar
     </div>
     
     <div style="flex: 3; min-width: 250px; text-align: center;">
-        <h1 style="color: white; margin: 0; font-size: 2.2rem; font-weight: 800; line-height: 1.2;">
+        <h1 style="color: white; margin: 0; font-size: 2.2rem; font-weight: 800; line-height: 1.2; border: none;">
             Ubah Kebun Anda<br>Menjadi Cerdas
         </h1>
     </div>
@@ -59,8 +58,9 @@ hero_html = """
 </div>
 """
 
-# Jalankan HTML murni di Streamlit
-st.markdown(hero_html, unsafe_allow_html=True)    
+# PERBAIKAN UTAMA: Baris ini wajib ada di paling bawah agar kodenya dieksekusi menjadi web!
+st.markdown(hero_html, unsafe_allow_html=True)
+
 # --- FRAME B: Solusi Pertanian ---
 st.markdown('<div class="frame frame-b">', unsafe_allow_html=True)
 st.subheader("Satu sistem pintar untuk semua jenis pertanian.")
