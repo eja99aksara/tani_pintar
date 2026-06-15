@@ -58,8 +58,6 @@ hero_html = """
     </div>
 </div>
 """
-
-# PERBAIKAN UTAMA: Baris ini wajib ada di paling bawah agar kodenya dieksekusi menjadi web!
 st.markdown(hero_html, unsafe_allow_html=True)
 
 # --- FRAME B: Solusi Pertanian ---
