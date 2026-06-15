@@ -29,16 +29,33 @@ hero_html = """<div style="background-color: #2d5a27; padding: 25px; border-radi
 </div>"""
 st.markdown(hero_html, unsafe_allow_html=True)
 
-# --- FRAME B: Solusi Pertanian ---
-st.markdown('<div class="frame frame-b">', unsafe_allow_html=True)
-st.subheader("Satu sistem pintar untuk semua jenis pertanian.")
-col_in, col_out = st.columns(2)
-with col_in:
-    st.info("### Pertanian Indoor & Hidroponik")
-with col_out:
-    st.success("### Lahan Terbuka (Outdoor)")
-st.markdown('</div>', unsafe_allow_html=True)
+# --- FRAME B: SOLUSI PERTANIAN (Murni Flexbox HTML Rata Kiri) ---
 
+# Teks Subjudul Utama
+st.markdown("### **Satu sistem pintar untuk semua jenis pertanian.**")
+
+frame_b_html = """<div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; margin-top: 20px; margin-bottom: 35px; font-family: sans-serif;">
+<div style="flex: 1; min-width: 280px; background-color: #f0f7f4; padding: 25px; border-radius: 12px; border-left: 5px solid #2d5a27; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+<div style="font-size: 2rem; margin-bottom: 10px;">🏢</div>
+<h3 style="color: #2d5a27; margin: 0 0 15px 0; font-size: 1.3rem; font-weight: bold;">Pertanian Indoor & Hidroponik</h3>
+<ul style="margin: 0; padding-left: 20px; color: #333; line-height: 1.6; font-size: 0.95rem;">
+<li style="margin-bottom: 8px;"><b>Otomatisasi Nutrisi & pH:</b> Sensor pintar menjaga takaran pupuk selalu pas secara otomatis.</li>
+<li style="margin-bottom: 8px;"><b>Kontrol Iklim Mikro:</b> Atur lampu grow led, suhu, dan kelembapan ruangan langsung via HP.</li>
+<li><b>Notifikasi Air Kering:</b> Alarm instan di WhatsApp jika air tandon nutrisi mulai menipis.</li>
+</ul>
+</div>
+<div style="flex: 1; min-width: 280px; background-color: #edf4f9; padding: 25px; border-radius: 12px; border-left: 5px solid #2e6f9e; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+<div style="font-size: 2rem; margin-bottom: 10px;">🚜</div>
+<h3 style="color: #2e6f9e; margin: 0 0 15px 0; font-size: 1.3rem; font-weight: bold;">Lahan Terbuka (Outdoor)</h3>
+<ul style="margin: 0; padding-left: 20px; color: #333; line-height: 1.6; font-size: 0.95rem;">
+<li style="margin-bottom: 8px;"><b>Smart Drip Irrigation:</b> Penyiraman otomatis hanya aktif saat tanah mendeteksi kekeringan.</li>
+<li style="margin-bottom: 8px;"><b>Prediksi Cuaca Lokal:</b> Sistem otomatis menunda penyiraman jika mendeteksi hari akan hujan.</li>
+<li><b>Deteksi Kesehatan Tanah:</b> Pantau kadar NPK tanah secara real-time dari layar dasbor.</li>
+</ul>
+</div>
+</div>"""
+
+st.markdown(frame_b_html, unsafe_allow_html=True)
 # --- FRAME C: Produk & Harga ---
 st.markdown('<div class="frame frame-c">', unsafe_allow_html=True)
 st.header("Produk & Harga")
