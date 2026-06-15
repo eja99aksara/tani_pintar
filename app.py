@@ -54,18 +54,75 @@ frame_b_html = """<div style="display: flex; justify-content: space-between; fle
 </ul>
 </div>
 </div>"""
-
 st.markdown(frame_b_html, unsafe_allow_html=True)
-# --- FRAME C: Produk & Harga ---
-st.markdown('<div class="frame frame-c">', unsafe_allow_html=True)
-st.header("Produk & Harga")
-tab1, tab2 = st.tabs(["Beli Langsung", "Tanya Dulu"])
+
+# 1. Sentuhan CSS Kustom untuk mempercantik Tabel dan Tab Streamlit
+st.markdown("""<style>
+/* Membuat tampilan tabel Streamlit menjadi lebih bersih dan modern */
+table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    font-family: sans-serif !important;
+}
+th {
+    background-color: #2d5a27 !important;
+    color: white !important;
+    text-align: left !important;
+    padding: 10px !important;
+}
+td {
+    padding: 10px !important;
+    border-bottom: 1px solid #ddd !important;
+    font-size: 0.95rem !important;
+}
+/* Mewarnai teks tombol aktif */
+div[data-testid="stMarkdownContainer"] p strong {
+    color: #2d5a27;
+}
+</style>""", unsafe_allow_html=True)
+
+# Judul Utama Frame C
+st.markdown("## **Pilih Paket Sesuai Kebutuhan Anda**")
+st.write("Mulai digitalisasi kebun Anda hari ini demi hasil panen yang berlipat ganda.")
+
+# 2. Membuat Sistem Tab Bawaan Streamlit
+tab1, tab2 = st.tabs(["🛒 Beli Langsung", "💬 Tanya Dulu"])
+
 with tab1:
-    st.write("Tabel Harga: [Starter] [Pro - Best Seller] [Enterprise]")
+    st.markdown("### **Daftar Paket Tani Pintar**")
+    
+    # Membuat tabel harga menggunakan format Markdown standar
+    tabel_harga = """
+| Nama Paket | Target Pengguna | Fitur Utama |
+| :--- | :--- | :--- |
+| **Starter 🌱** | Hobi / Rumahan | 2 Sensor Kelembapan + Kontrol Pompa Air Otomatis via HP |
+| **Pro 📈** | Kebun Komersil | Paket Starter + Sensor pH, Nutrisi Otomatis + Grafik Analisis |
+| **Enterprise 🚜** | Industri / Lahan Luas | Kustomisasi Penuh + Sensor NPK Tanah + Integrasi Cuaca + Garansi 2 Tahun |
+"""
+    st.markdown(tabel_harga)
+    
+    st.write("") # Jarak kosong
+    # Tombol aksi untuk melihat demo alat
+    st.link_button("📺 Lihat Demo Alat (YouTube)", "https://youtube.com", use_container_width=True)
+
 with tab2:
-    st.write("Silahkan isi form untuk konsultasi")
-st.button("Lihat Demo Alat")
-st.markdown('</div>', unsafe_allow_html=True)
+    st.markdown("### **Formulir Konsultasi Gratis**")
+    st.write("Silakan isi data di bawah ini, tim ahli kami akan segera menghubungi Anda.")
+    
+    # Membuat formulir input interaktif
+    with st.form(key="form_konsultasi"):
+        nama = st.text_input("Nama Lengkap")
+        kontak = st.text_input("Nomor WhatsApp / Email")
+        luas_lahan = st.selectbox("Luas Lahan Pertanian", ["< 100 m² (Rumahan)", "100 - 1000 m²", "> 1000 m² (Skala Industri)"])
+        pesan = st.text_area("Ceritakan kendala atau kebutuhan kebun Anda")
+        
+        submit_button = st.form_submit_button(label="Kirim Pengajuan Konsultasi")
+        
+        if submit_button:
+            if nama and kontak:
+                st.success(f"Terima kasih {nama}! Data Anda berhasil dikirim. Tim Tani Pintar akan segera menghubungi Anda melalui {kontak}.")
+            else:
+                st.warning("Mohon isi Nama dan Kontak Anda terlebih dahulu.")
 
 # --- FRAME D: Social Proof ---
 st.markdown('<div class="frame frame-d">', unsafe_allow_html=True)
