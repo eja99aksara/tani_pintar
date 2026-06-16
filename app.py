@@ -47,6 +47,8 @@ link_toko_online = "https://tokopedia.com"
 # =================================================================
 # --- FRAME A: HERO SECTION (Tata Letak Kiri, Tombol WA Diperkecil) ---
 # =================================================================
+# --- FRAME A: HERO SECTION (Tata Letak Kiri, Tombol WA Diperkecil) ---
+# =================================================================
 hero_html = f"""<div style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('{bg_hero}'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 35px 20px; border-radius: 12px; color: white; display: flex; flex-direction: column; align-items: flex-start; text-align: left; gap: 12px; margin-bottom: 30px; font-family: sans-serif;">
     <div style="font-size: 1.1rem; font-weight: bold; letter-spacing: 1px; color: #ffffff; text-shadow: 2px 2px 5px rgba(0,0,0,0.7);">🌿 TaniPintar</div>
     
