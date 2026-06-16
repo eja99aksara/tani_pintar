@@ -117,11 +117,10 @@ with tab2:
             st.success(f"Terima kasih {nama}! Data berhasil dikirim.")
 
 # =================================================================
-# =================================================================
 # --- FRAME D: SOCIAL PROOF (Mengikuti Gaya Jernih Tanpa Kotak Buram) ---
 # =================================================================
 st.write("")
-st.markdown("## **Social Proof & Penutup**")
+st.markdown("### **Social Proof & Penutup**")
 
 frame_d_html = f"""<div style="background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('{bg_proof}'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 40px 25px; border-radius: 12px; font-family: sans-serif; margin-bottom: 30px; text-align: center;">
     <p style="font-style: italic; color: #ffffff; font-size: 0.85rem; line-height: 1.6; margin: 0 0 15px 0; text-shadow: 2px 2px 5px rgba(0,0,0,0.8); font-weight: 500;">
@@ -136,7 +135,7 @@ st.markdown(frame_d_html, unsafe_allow_html=True)
 # =================================================================
 # --- FRAME E: PUSTAKA & DOKUMENTASI (Menggunakan Gambar 6 & 7)
 # =================================================================
-st.markdown("## **Pelajari Lebih Lanjut Sistem Tani Pintar**")
+st.markdown("### **Pelajari Lebih Lanjut Sistem Tani Pintar**")
 
 # Menggunakan gambar laboratorium vertikal sebagai banner atas pustaka
 st.markdown(f"""<img src="{img_banner_pustaka}" style="width: 100%; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);" alt="Dokumentasi Lab">""", unsafe_allow_html=True)
