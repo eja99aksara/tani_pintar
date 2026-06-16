@@ -45,35 +45,18 @@ link_youtube_demo = "https://youtube.com"
 link_toko_online = "https://tokopedia.com" 
 
 # =================================================================
-# --- FRAME A: HERO SECTION (Versi Stabil, Rapi Kiri, Tanpa Error) ---
+# --- FRAME A: HERO SECTION (Gaya Inline - Anti Bocor & Pas Kiri) ---
 # =================================================================
 
-# Menyisipkan gaya tombol langsung di dalam tag <style> lewat st.markdown yang aman
-hero_html = f"""
-<style>
-    .tombol-wa-mini {{
-        display: inline-block !important;
-        width: max-content !important;
-        background-color: #2d5a27 !important;
-        color: white !important;
-        padding: 6px 14px !important;
-        border-radius: 20px !important;
-        text-decoration: none !important;
-        font-weight: bold !important;
-        font-size: 0.75rem !important;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.3) !important;
-        border: 1px solid rgba(255,255,255,0.2) !important;
-    }}
-</style>
-
-<div style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('{bg_hero}'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 35px 20px; border-radius: 12px; color: white; display: flex; flex-direction: column; align-items: flex-start; text-align: left; gap: 12px; margin-bottom: 30px; font-family: sans-serif;">
+hero_html = f"""<div style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('{bg_hero}'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 35px 20px; border-radius: 12px; color: white; display: flex; flex-direction: column; align-items: flex-start; text-align: left; gap: 12px; margin-bottom: 30px; font-family: sans-serif;">
+    
     <div style="font-size: 1.1rem; font-weight: bold; letter-spacing: 1px; color: #ffffff; text-shadow: 2px 2px 5px rgba(0,0,0,0.7);">🌿 TaniPintar</div>
     
     <h1 style="color: white; margin: 0; font-size: 1.6rem; font-weight: 800; line-height: 1.2; text-shadow: 2px 2px 6px rgba(0,0,0,0.8); border: none; background: none; padding: 0;">Ubah Kebun Anda<br>Menjadi Cerdas</h1>
     
-    <a href="{nomor_admin_wa}" target="_blank" class="tombol-wa-mini">Konsultasi Gratis (WA)</a>
-</div>
-"""
+    <a href="{nomor_admin_wa}" target="_blank" style="display: inline-block; width: max-content; background-color: #2d5a27; color: white; padding: 6px 14px; border-radius: 20px; text-decoration: none; font-weight: bold; font-size: 0.75rem; box-shadow: 0 4px 6px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.2);">Konsultasi Gratis (WA)</a>
+
+</div>"""
 
 st.markdown(hero_html, unsafe_allow_html=True)
 
